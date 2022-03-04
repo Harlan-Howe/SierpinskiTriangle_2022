@@ -124,7 +124,7 @@ public class SierpinskiPanel extends JPanel {
                         //  (The myCanv_g is a graphics object, just like the "g" you're familiar with, but it draws
                         //  on an offscreen canvas that will be periodically copied to the screen.
                         //  Reminder: you'll need to typecast the doubles to ints to draw.
-
+                        myCanv_g.drawLine(100,100,200,200); // replace this line!
 
 
                     } // k, now I'm done with myCanvas for now. Release it.
