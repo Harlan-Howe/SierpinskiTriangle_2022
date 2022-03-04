@@ -105,13 +105,14 @@ public class SierpinskiPanel extends JPanel {
                 }
             }
 
-            public void drawSierpinskiTriangle(double x1, double y1,      double x2, double y2,    double x3, double y3,   int depthToGo)
+            public void drawSierpinskiTriangle(double x1, double y1,      double x2, double y2,    double x3, double y3,   int recursionsToGo)
             {
                 if (shouldInterrupt) // bail out quickly....
                     return;
 
-                // you should have a base case and a case in which you continue the recursion, one step closer to the base case.
-                if (depthToGo == 0)
+                            // TODO: you should have a base case and a case in which you continue the recursion,
+                            //  one step closer to the base case.
+                if (1 == 1) //  Replace this condition with one that actually makes sense to detect the base case.
                 {
                     // --> --> --> --> NOTE:You should ONLY draw a triangle in the base case! To do so, you will need something like this...
                     synchronized (myCanvasMutex) // wait until myCanvas is free, then lock it for my use...
@@ -119,19 +120,21 @@ public class SierpinskiPanel extends JPanel {
                         Graphics myCanv_g = myCanvas.getGraphics();
                         myCanv_g.setColor(Color.white);
 
-                        // ..... and draw the triangle via myCanv_g.drawLine() or myCanv_g.drawPolygon() here.
-                        // reminder: you'll need to typecast the doubles to ints to draw.
-                        myCanv_g.drawLine((int) x1, (int) y1, (int) x2, (int) y2);
-                        myCanv_g.drawLine((int) x2, (int) y2, (int) x3, (int) y3);
-                        myCanv_g.drawLine((int) x3, (int) y3, (int) x1, (int) y1);
+                        // TODO: ..... and draw the triangle via myCanv_g.drawLine() or myCanv_g.drawPolygon() here.
+                        //  (The myCanv_g is a graphics object, just like the "g" you're familiar with, but it draws
+                        //  on an offscreen canvas that will be periodically copied to the screen.
+                        //  Reminder: you'll need to typecast the doubles to ints to draw.
+
 
 
                     } // k, now I'm done with myCanvas for now. Release it.
                     repaint();
-                } else
+                } else // if it isn't the base case...
                 {
                    // TODO - you write this part, the non-base case!
                    // Note: It does not contain any drawing commands.
+
+
                 }
 
             }
